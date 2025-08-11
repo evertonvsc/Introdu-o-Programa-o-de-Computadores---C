@@ -8,9 +8,9 @@ void divisor(){
 int main()
 {
 
-    /*LEGENDA: '~' = ¡gua
+    /*LEGENDA: '~' = √Ågua
                'N' = Navio
-               'O' = ¡rea de ·gua atingida pelo ataque
+               'O' = √Årea de √°gua atingida pelo ataque
                'X' = Navio atingido pelo ataque
 
     */
@@ -25,7 +25,7 @@ int main()
     char cruz[5][5] = {{'~', '~', 'O', '~', '~'}, {'~', '~', 'O', '~', '~'}, {'O', 'O', 'O', 'O', 'O'}, {'~', '~', 'O', '~', '~'}, {'~', '~', 'O', '~', '~'}};
     char octaedro[5][5] = {{'~', '~', 'O', '~', '~'}, {'~', 'O', 'O', 'O', '~'}, {'O', 'O', 'O', 'O', 'O'}, {'~', 'O', 'O', 'O', '~'}, {'~', '~', 'O', '~', '~'}};
 
-// CriaÁ„o do tabuleiro inicial
+// Cria√ß√£o do tabuleiro inicial
 
     for(int i=0; i<10; i++){
         for(int j=0; j<10; j++){
@@ -34,12 +34,12 @@ int main()
         }
     }
 
-    printf("   "); // EspaÁo canto superior esquerdo
+    printf("   "); // Espa√ßo canto superior esquerdo
     for (int i = 0; i<10; i++)
         printf(" %d  ", i);
     printf("\n");
 
-// Impress„o do tabuleiro inicial
+// Impress√£o do tabuleiro inicial
 
     for(int i = 0; i<10; i++) {
         printf("%d ", i);
@@ -56,12 +56,12 @@ int main()
         do{
             divisor();
             printf("\n>> NAVIO %i: \n", i+1);
-            printf("\nEscolha a orientaÁ„o: \n\n");
+            printf("\nEscolha a orienta√ß√£o: \n\n");
             printf("[1] Horizontal\n[2] Vertical\n[3] Inclinado para direita[/]\n[4] Inclinado para esquerda [\\]\n\n>> ");
             scanf("%d", &posicao);
 
             if(posicao < 1 || posicao > 4){
-                printf("\n!!! Valores inv·lidos...\n");
+                printf("\n!!! Valores inv√°lidos...\n");
             } else {
                 switch(posicao){
                     case 1:
@@ -72,10 +72,10 @@ int main()
                             printf("> Coluna [1-8]: ");
                             scanf("%d", &coluna);
                             if((linha < 0 || linha  > 9) || (coluna < 1 || coluna > 8)){
-                                printf("\n!!! PosiÁıes inv·lidas...\n");
+                                printf("\n!!! Posi√ß√µes inv√°lidas...\n");
                             } else {
                                 if(novo_tabuleiro[linha][coluna-1] == 'N' || novo_tabuleiro[linha][coluna] == 'N' || novo_tabuleiro[linha][coluna+1] == 'N'){
-                                    printf("\n!!! Essa posiÁ„o j· est· ocupada, tente novamente...\n");
+                                    printf("\n!!! Essa posi√ß√£o j√° est√° ocupada, tente novamente...\n");
                                     linha = -1;
                                 } else{
                                     novo_tabuleiro[linha][coluna-1] = 'N';
@@ -95,10 +95,10 @@ int main()
                             printf("> Coluna [0-9]: ");
                             scanf("%d", &coluna);
                             if((linha < 1 || linha  > 8) || (coluna < 0 || coluna > 9)){
-                                printf("\n!!! PosiÁıes inv·lidas...\n");
+                                printf("\n!!! Posi√ß√µes inv√°lidas...\n");
                             } else {
                                 if(novo_tabuleiro[linha-1][coluna] == 'N' || novo_tabuleiro[linha][coluna] == 'N' || novo_tabuleiro[linha+1][coluna] == 'N'){
-                                    printf("\n!!! Essa posiÁ„o j· est· ocupada, tente novamente...\n");
+                                    printf("\n!!! Essa posi√ß√£o j√° est√° ocupada, tente novamente...\n");
                                     linha = -1;
                                 } else{
                                     novo_tabuleiro[linha-1][coluna] = 'N';
@@ -118,10 +118,10 @@ int main()
                             printf("> Coluna [1-8]: ");
                             scanf("%d", &coluna);
                             if((linha < 1 || linha  > 8) || (coluna < 1 || coluna > 8)){
-                                printf("\n!!! PosiÁıes inv·lidas...\n");
+                                printf("\n!!! Posi√ß√µes inv√°lidas...\n");
                             } else {
                                 if(novo_tabuleiro[linha-1][coluna+1] == 'N' || novo_tabuleiro[linha][coluna] == 'N' || novo_tabuleiro[linha+1][coluna-1] == 'N'){
-                                    printf("\n!!! Essa posiÁ„o j· est· ocupada, tente novamente...\n");
+                                    printf("\n!!! Essa posi√ß√£o j√° est√° ocupada, tente novamente...\n");
                                     linha = -1;
                                 } else{
                                     novo_tabuleiro[linha-1][coluna+1] = 'N';
@@ -141,10 +141,10 @@ int main()
                             printf("> Coluna [1-8]: ");
                             scanf("%d", &coluna);
                             if((linha < 1 || linha  > 8) || (coluna < 1 || coluna > 8)){
-                                printf("\n!!! PosiÁıes inv·lidas...\n");
+                                printf("\n!!! Posi√ß√µes inv√°lidas...\n");
                             } else {
                                 if(novo_tabuleiro[linha-1][coluna-1] == 'N' || novo_tabuleiro[linha][coluna] == 'N' || novo_tabuleiro[linha+1][coluna+1] == 'N'){
-                                    printf("\n!!! Essa posiÁ„o j· est· ocupada, tente novamente...\n");
+                                    printf("\n!!! Essa posi√ß√£o j√° est√° ocupada, tente novamente...\n");
                                     linha = -1;
                                 } else{
                                     novo_tabuleiro[linha-1][coluna-1] = 'N';
@@ -167,7 +167,7 @@ int main()
     divisor();
 
 
-// Impress„o do tabuleiro com os navios
+// Impress√£o do tabuleiro com os navios
 
     printf("   ");
     for (int i = 0; i<10; i++)
@@ -195,7 +195,7 @@ int main()
         scanf("%d", &ataque);
 
         if(ataque < 1 || ataque > 3){
-            printf("\n!!! OpÁ„o Inv·lida, tente novamente ...\n");
+            printf("\n!!! Op√ß√£o Inv√°lida, tente novamente ...\n");
         }
 
     } while(ataque < 1 || ataque > 3);
@@ -209,7 +209,7 @@ int main()
         scanf("%d", &col_atq);
 
         if((lin_atq < 2 || lin_atq > 7) || (col_atq < 2 || col_atq > 7)){
-            printf("\n!!! OpÁ„o Inv·lida, tente novamente ...\n");
+            printf("\n!!! Op√ß√£o Inv√°lida, tente novamente ...\n");
         }
 
         } while((lin_atq < 2 || lin_atq > 7) || (col_atq < 2 || col_atq > 7));
@@ -267,7 +267,7 @@ int main()
         }
 
 
-// Impress„o do tabuleiro com o ataque
+// Impress√£o do tabuleiro com o ataque
 
     divisor();
     printf("   ");
