@@ -17,56 +17,56 @@ int main(){
 
 
 // Leitura Carta 1
-    printf("*** Referente ‡ primeira carta, insira as seguintes informaÁıes:\n\n");
+    printf("*** Referente √† primeira carta, insira as seguintes informa√ß√µes:\n\n");
 
     printf("Letra referente ao estado [A-H]: ");
     scanf(" %c", &estado1);
 
-    printf("NumeraÁ„o da carta [01-04]: ");
+    printf("Numera√ß√£o da carta [01-04]: ");
     scanf("%s", &codigo1);
 
     printf("Nome da cidade: ");
     scanf(" %[^\n]", &cidade1);
 
-    printf("N˙mero de habitantes da cidade: ");
+    printf("N√∫mero de habitantes da cidade: ");
     scanf("%d", &populacao1);
 
-    printf("¡rea da cidade em km2: ");
+    printf("√Årea da cidade em km2: ");
     scanf("%f", &area1);
 
-    printf("PIB da cidade (Em bilhıes de reais): ");
+    printf("PIB da cidade (Em bilh√µes de reais): ");
     scanf("%f", &pib1);
 
-    printf("Quantidade de pontos turÌsticos na cidade: ");
+    printf("Quantidade de pontos tur√≠sticos na cidade: ");
     scanf("%d", &pontotur1);
 
 
 // Leitura Carta 2
-    printf("\n\n*** Referente ‡ primeira carta, insira as seguintes informaÁıes:\n\n");
+    printf("\n\n*** Referente √† primeira carta, insira as seguintes informa√ß√µes:\n\n");
 
     printf("Letra referente ao estado [A-H]: ");
     scanf(" %c", &estado2);
 
-    printf("NumeraÁ„o da carta [01-04]: ");
+    printf("Numera√ß√£o da carta [01-04]: ");
     scanf("%s", &codigo2);
 
     printf("Nome da cidade: ");
     scanf(" %[^\n]", &cidade2);
 
-    printf("N˙mero de habitantes da cidade: ");
+    printf("N√∫mero de habitantes da cidade: ");
     scanf("%d", &populacao2);
 
-    printf("¡rea da cidade em km2: ");
+    printf("√Årea da cidade em km2: ");
     scanf("%f", &area2);
 
-    printf("PIB da cidade (Em bilhıes de reais): ");
+    printf("PIB da cidade (Em bilh√µes de reais): ");
     scanf("%f", &pib2);
 
-    printf("Quantidade de pontos turÌsticos na cidade: ");
+    printf("Quantidade de pontos tur√≠sticos na cidade: ");
     scanf("%d", &pontotur2);
 
 
-// C·lculos
+// C√°lculos
 
     dens_pop1 = populacao1/area1;
     pib_pc1 = (pib1*1000000000)/populacao1;
@@ -83,7 +83,7 @@ int main(){
 
 // Menu
     printf("\n\n______________________________________________________\n");
-    printf("\n>> Escolha o primeiro atributo para comparaÁ„o [1-6]: \n\n[1] PopulaÁ„o\n[2] ¡rea\n[3] PIB\n[4] Qtd de pontos turÌsticos\n[5] Densidade Populacional\n[6] PIB Per Capita\n>> ");
+    printf("\n>> Escolha o primeiro atributo para compara√ß√£o [1-6]: \n\n[1] Popula√ß√£o\n[2] √Årea\n[3] PIB\n[4] Qtd de pontos tur√≠sticos\n[5] Densidade Populacional\n[6] PIB Per Capita\n>> ");
     scanf("%d", &escolha1);
     printf("\n>> Escolha o segundo:\n>> ");
     scanf("%d", &escolha2);
@@ -92,8 +92,8 @@ int main(){
 
     while((escolha1 < 1 || escolha1 > 6 || escolha2 < 1 || escolha2 > 6) || (escolha1 == escolha2)){
         printf("\n\n______________________________________________________\n");
-        printf("!!!! Escolhas inv·lidas, Tente novamente:\n");
-        printf("\n>> Escolha o primeiro atributo para comparaÁ„o [1-6]: \n\n[1] PopulaÁ„o\n[2] ¡rea\n[3] PIB\n[4] Qtd de pontos turÌsticos\n[5] Densidade Populacional\n[6] PIB Per Capita\n>> ");
+        printf("!!!! Escolhas inv√°lidas, Tente novamente:\n");
+        printf("\n>> Escolha o primeiro atributo para compara√ß√£o [1-6]: \n\n[1] Popula√ß√£o\n[2] √Årea\n[3] PIB\n[4] Qtd de pontos tur√≠sticos\n[5] Densidade Populacional\n[6] PIB Per Capita\n>> ");
         scanf("%d", &escolha1);
         printf("\n>> Escolha o segundo:\n>> ");
         scanf("%d", &escolha2);
@@ -109,7 +109,7 @@ int main(){
             case 1:
                 soma1 += (float)populacao1;
                 soma2 += (float)populacao2;
-                printf("\n>> PopulaÁ„o:\n%s %d x %d %s\n", cidade1, populacao1, populacao2, cidade2);
+                printf("\n>> Popula√ß√£o:\n%s %d x %d %s\n", cidade1, populacao1, populacao2, cidade2);
                 if (populacao1 > populacao2){
                     printf("== Carta 1 (%c%s) venceu!\n", estado1, codigo1);
                     pontos1++;
@@ -125,7 +125,7 @@ int main(){
             case 2:
                 soma1 += area1;
                 soma2 += area2;
-                printf("\n>> ¡rea (km2):\n%s %.2f x %.2f %s\n", cidade1, area1, area2, cidade2);
+                printf("\n>> √Årea (km2):\n%s %.2f x %.2f %s\n", cidade1, area1, area2, cidade2);
                 if (area1 > area2){
                     printf("== Carta 1 (%c%s) venceu!\n", estado1, codigo1);
                     pontos1++;
@@ -141,7 +141,7 @@ int main(){
             case 3:
                 soma1 += pib1;
                 soma2 += pib2;
-                printf("\n>> PIB (bilhıes):\n%s %.2f x %.2f %s\n", cidade1, pib1, pib2, cidade2);
+                printf("\n>> PIB (bilh√µes):\n%s %.2f x %.2f %s\n", cidade1, pib1, pib2, cidade2);
                 if (pib1 > pib2){
                     printf("== Carta 1 (%c%s) venceu!\n", estado1, codigo1);
                     pontos1++;
@@ -157,7 +157,7 @@ int main(){
             case 4:
                 soma1 += (float)pontotur1;
                 soma2 += (float)pontotur2;
-                printf("\n>> Quantidade de Pontos TurÌsticos:\n%s %d x %d %s\n", cidade1, pontotur1, pontotur2, cidade2);
+                printf("\n>> Quantidade de Pontos Tur√≠sticos:\n%s %d x %d %s\n", cidade1, pontotur1, pontotur2, cidade2);
                 if (pontotur1 > pontotur2){
                     printf("== Carta 1 (%c%s) venceu!\n", estado1, codigo1);
                     pontos1++;
@@ -203,7 +203,7 @@ int main(){
                 }
                 break;
             default:
-                printf("OpÁ„o Inv·lida!");
+                printf("Op√ß√£o Inv√°lida!");
 
         }
     }
@@ -227,7 +227,7 @@ int main(){
 
     (pontos1 > pontos2) ? printf("\n>>> A carta 1 (%c%s) saiu vencedora!!!\n", estado1, codigo1) :
     (pontos1 < pontos2) ? printf("\n>>> A carta 2 (%c%s) saiu vencedora!!!\n", estado2, codigo2) :
-    printf("\n>>> A comparaÁ„o terminou empatada!!!\n");
+    printf("\n>>> A compara√ß√£o terminou empatada!!!\n");
 
 
 
