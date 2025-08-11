@@ -12,7 +12,7 @@ void imprime_torre(int a, int b){
         case 2: printf("Baixo "); break;
         case 3: printf("Direita "); break;
         case 4: printf("Esquerda "); break;
-        default: printf("Movimento inv·lido");
+        default: printf("Movimento inv√°lido");
     }
     imprime_torre(movimento, b - 1);
 }
@@ -29,7 +29,7 @@ void imprime_bispo(int a, int b){
         case 2: printf("Cima Esquerda "); break;
         case 3: printf("Baixo Direita "); break;
         case 4: printf("Baixo Esquerda "); break;
-        default: printf("Movimento inv·lido");
+        default: printf("Movimento inv√°lido");
     }
     imprime_bispo(movimento, b - 1);
 }
@@ -51,7 +51,7 @@ void imprime_rainha(int a, int b){
         case 6: printf("Cima Esquerda "); break;
         case 7: printf("Baixo Direita "); break;
         case 8: printf("Baixo Esquerda "); break;
-        default: printf("Movimento inv·lido");
+        default: printf("Movimento inv√°lido");
     }
     imprime_rainha(movimento, b - 1);
 }
@@ -94,7 +94,7 @@ void imprime_cavalo(int a){
             for (i = 0; i < 1; i++) { printf("Baixo ");
             } for (j = 0; j < 2; j++) { printf("Esquerda ");}
             break;
-        default: printf("Movimento inv·lido");
+        default: printf("Movimento inv√°lido");
     }
 
 }
@@ -109,10 +109,10 @@ int main() {
     int movimento;
     int quantidade;
 
-// Escolha da peÁa
+// Escolha da pe√ßa
     do {
         printf("\n=======================================================\n");
-        printf("Escolha a sua peÁa: \n");
+        printf("Escolha a sua pe√ßa: \n");
         printf("[1] Torre\n");
         printf("[2] Bispo\n");
         printf("[3] Rainha\n");
@@ -121,10 +121,10 @@ int main() {
         scanf("%d", &escolha_peca);
     } while (escolha_peca < 1 || escolha_peca > 4);
 
-// Escolha da posiÁ„o inicial
+// Escolha da posi√ß√£o inicial
     do {
         printf("\n=======================================================\n");
-        printf("Agora escolha as posiÁıes da peÁa %s:\n", pecas[escolha_peca - 1]);
+        printf("Agora escolha as posi√ß√µes da pe√ßa %s:\n", pecas[escolha_peca - 1]);
         printf("1. Linha [1-8]: ");
         scanf("%d", &pos_linha);
         printf("1. Coluna [1-8]: ");
@@ -133,7 +133,7 @@ int main() {
 
 // Imprime o tabuleiro inicial
     printf("\n=======================================================\n");
-    printf("AÌ est· sua peÁa:\n\n");
+    printf("A√≠ est√° sua pe√ßa:\n\n");
     for (int i = 1; i <= 8; i++) {
         for (int j = 1; j <= 8; j++) {
             if (i == pos_linha && j == pos_coluna)
@@ -144,7 +144,7 @@ int main() {
         printf("\n");
     }
 
-// MovimentaÁ„o das peÁas
+// Movimenta√ß√£o das pe√ßas
     switch (escolha_peca) {
         case 1: // Torre
             do {
@@ -166,9 +166,9 @@ int main() {
                 }
 
                 if (nova_linha < 1 || nova_linha > 8 || nova_coluna < 1 || nova_coluna > 8){
-                    printf("!!! Movimento inv·lido\n");
+                    printf("!!! Movimento inv√°lido\n");
                 } else {
-                    printf("\nMovimentaÁ„o feita: \n");
+                    printf("\nMovimenta√ß√£o feita: \n");
                     imprime_torre(movimento, quantidade);
                     }
 
@@ -198,9 +198,9 @@ int main() {
                 }
 
                 if (nova_linha < 1 || nova_linha > 8 || nova_coluna < 1 || nova_coluna > 8){
-                    printf("!!! Movimento inv·lido\n");
+                    printf("!!! Movimento inv√°lido\n");
                 } else {
-                    printf("\nMovimentaÁ„o feita: \n");
+                    printf("\nMovimenta√ß√£o feita: \n");
                     imprime_bispo(movimento, quantidade);
                 }
 
@@ -235,9 +235,9 @@ int main() {
                 }
 
                 if (nova_linha < 1 || nova_linha > 8 || nova_coluna < 1 || nova_coluna > 8){
-                    printf("!!! Movimento inv·lido\n");
+                    printf("!!! Movimento inv√°lido\n");
                 } else {
-                    printf("\nMovimentaÁ„o feita: \n");
+                    printf("\nMovimenta√ß√£o feita: \n");
                     imprime_rainha(movimento, quantidade);
                 }
 
@@ -270,9 +270,9 @@ int main() {
                 }
 
                 if (nova_linha < 1 || nova_linha > 8 || nova_coluna < 1 || nova_coluna > 8){
-                    printf("!!! Movimento inv·lido\n");
+                    printf("!!! Movimento inv√°lido\n");
                 } else {
-                    printf("\nMovimentaÁ„o feita: \n");
+                    printf("\nMovimenta√ß√£o feita: \n");
                     imprime_cavalo(movimento);
                 }
 
@@ -280,13 +280,13 @@ int main() {
             break;
     }
 
-// Nova posiÁ„o da peÁa
+// Nova posi√ß√£o da pe√ßa
     pos_linha = nova_linha;
     pos_coluna = nova_coluna;
 
 // Imprime tabuleiro final
     printf("\n=======================================================\n");
-    printf("Nova posiÁ„o da peÁa %s:\n\n", pecas[escolha_peca - 1]);
+    printf("Nova posi√ß√£o da pe√ßa %s:\n\n", pecas[escolha_peca - 1]);
     for (int i = 1; i <= 8; i++) {
         for (int j = 1; j <= 8; j++) {
             if (i == pos_linha && j == pos_coluna)
